@@ -1,26 +1,26 @@
-# OOP Java Practice Problems
+# Bank Account Hierarchy & Management System
 
-A collection of 5 Java programs demonstrating core Object-Oriented Programming principles: Encapsulation, Inheritance, Polymorphism, Abstraction, Custom Exceptions, and Recursion.
+An Object-Oriented Programming (OOP) Java application modeling a banking domain with strict encapsulation, class inheritance, method overriding, and domain-specific custom exceptions.
 
-## Program Roadmap
+## Features & Architecture
 
-- [ ] **1. Bank Account Hierarchy with Custom Exceptions**
-  - Base `Account` class (encapsulation)
-  - Custom exceptions (`InsufficientFundsException`, `InvalidAmountException`)
-  - Subclasses: `SavingsAccount` & `CheckingAccount`
-  - Transaction history & interactive console menu
-- [ ] **2. Employee Payroll System**
-  - Abstract `Employee` class & polymorphism
-  - Subclasses: `SalariedEmployee`, `HourlyEmployee`, `CommissionEmployee`
-  - Pay calculation and payroll report generator
-- [ ] **3. Student Grade Tracker & Performance Analyzer**
-  - `Student` class with grade validation (`InvalidScoreException`)
-  - Statistical calculations (average, min, max, letter grades, pass/fail)
-  - Class-wide performance evaluation
-- [ ] **4. Vehicle Parking / Rental System**
-  - Vehicle types & rate calculation using enums and interfaces
-  - Duration validation & parking ticket system
-  - Slot availability & fee calculation
-- [ ] **5. Recursive Maze Solver & Numerical Utilities**
-  - Recursive operations: digit sums, palindromes, powers
-  - 2D grid pathfinding using recursion and backtracking
+- **Custom Exceptions:**
+  - `InvalidAmountException`: Thrown when negative or zero transaction amounts are supplied.
+  - `InsufficientFundsException`: Thrown when a withdrawal exceeds available funds, carrying the exact `shortfall` amount.
+- **Base Class:**
+  - `Account.java`: Encapsulates account number, holder name, and balance with validation for deposits and withdrawals.
+- **Subclasses:**
+  - `SavingsAccount.java`: Enforces a minimum maintaining balance and calculates monthly interest.
+  - `CheckingAccount.java`: Supports overdraft limits with transaction fee deduction.
+- **Driver:**
+  - `BankApp.java`: Interactive console application to create accounts, perform transactions, and demonstrate robust exception handling.
+
+## How to Compile & Run
+
+```bash
+# Compile all Java files
+javac *.java
+
+# Run the application
+java BankApp
+```
